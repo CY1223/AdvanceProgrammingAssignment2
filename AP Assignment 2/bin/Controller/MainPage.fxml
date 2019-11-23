@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainPageController">
+   <center>
+      <AnchorPane prefHeight="374.0" prefWidth="262.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listView" layoutX="106.0" layoutY="93.0" onMouseClicked="#vehicleDetails" prefHeight="374.4" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#loadTextFromFileCar" text="Import txt (Car)" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadTextFromFileVan" text="Import txt (Van)" />
+                  <MenuItem mnemonicParsing="false" onAction="#exportToTXT" text="Export txt" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Insert Vehicle">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#addCar" text="Add Car" />
+                  <MenuItem mnemonicParsing="false" onAction="#addVan" text="Add Van" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Database">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleExportDB" text="Export" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox alignment="CENTER" prefHeight="368.0" prefWidth="149.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Type" />
+            <ChoiceBox fx:id="cbType" prefWidth="150.0">
+            	 <items>
+	                <FXCollections fx:factory="observableArrayList">
+	                    <String fx:value="All" />
+	                    <String fx:value="Car" />
+	                    <String fx:value="Van" />
+	                </FXCollections>
+	             </items>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Label text="Number of  seats" />
+            <ChoiceBox fx:id="cbSeats" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Label text="Status" />
+            <ChoiceBox fx:id="cbStatus" prefWidth="150.0">
+            	<items>
+	                <FXCollections fx:factory="observableArrayList">
+	                	<String fx:value="All" />
+	                    <String fx:value="available" />
+	                    <String fx:value="rented" />
+	                    <String fx:value="under maintenance" />
+	                </FXCollections>
+	             </items>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Label text="Make" />
+            <ChoiceBox fx:id="cbMake" prefWidth="150.0">
+            	<items>
+	                <FXCollections fx:factory="observableArrayList">
+	                    <String fx:value="All" />
+	                    <String fx:value="Honda" />
+	                    <String fx:value="Toyota" />
+	                    <String fx:value="Nissan" />
+	                    <String fx:value="Mazda" />
+	                    <String fx:value="Subaru" />
+	                </FXCollections>
+	             </items>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </ChoiceBox>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
