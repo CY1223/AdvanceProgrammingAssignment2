@@ -10,7 +10,7 @@ Scene Builder for the UI.
 HSQLDB for database.
 
 # Overview of the system
-This system allows users to add two types of vehicles, cars and vans. The vehicle details are stored to the database.
+This is a car rental system that allows user to add, rent, return and send vehicles to maintainence.
 
 # Rent Vehicles
 Vehicles added are allowed to be rent. 
